@@ -7,7 +7,7 @@
         <section class="container mx-auto h-screen w-screen">
             <section class="space-y-4">
                 <h1 class="text-4xl font-bold">Laravel Inertia JS Starterkit</h1>
-                <p>Custom Laravel Inertia JS starterkit made by <a class="underline" href="">Alexander Ivan.</a> Stop
+                <p>A Complete custom Laravel Inertia JS starterkit made by <a class="underline" href="">Alexander Ivan.</a> Stop
                     wasting
                     your time configuring settings things up for new project. Things included in this starterkit:</p>
             </section>
@@ -16,12 +16,12 @@
                 <ul class="list-none">
                     <li>Laravel 10</li>
                     <li>Tailwind CSS</li>
-                    <li>Inertia JS SSR</li>
+                    <li>Inertia JS + SSR</li>
                     <li>Ziggy</li>
                     <li>Fortify</li>
                     <li>Spatie Permission</li>
                     <li>Login/Register Page</li>
-                    <li>Dashboard</li>
+                    <li>Responsive Dashboard Design</li>
                 </ul>
 
                 <section class="mt-8">
@@ -31,8 +31,16 @@
                         <li>Folder structures</li>
                     </ul>
                 </section>
+
+                <section class="mt-8">
+                    <p>Support Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, magni.</p>
+                    <a :href="route('about')">Support Page</a>
+                </section>
             </section>
-            <a :href="route('about')">About Page</a>
+
+            <footer class="">
+                <p>Starterkit Made by ❤️ Alexander Ivan</p>
+            </footer>
         </section>
 
     </section>
