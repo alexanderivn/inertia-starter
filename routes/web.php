@@ -22,6 +22,11 @@ Route::get('/about', function () {
     return Inertia::render('Front/About');
 })->name('about');
 
+// Middleware guess
 Route::get('/login', function () {
     return Inertia::render('Auth/Login');
 })->name('login');
+
+
+// Middleware Admin
+// some route here
