@@ -21,3 +21,7 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return Inertia::render('Front/About');
 })->name('about');
+
+Route::get('/login', function () {
+    return Inertia::render('Auth/Login');
+})->name('login');
