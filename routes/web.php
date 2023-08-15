@@ -20,9 +20,9 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function () {
     {
-        Route::get('/about', function () {
-            return Inertia::render('Front/About');
-        })->name('about');
+        Route::get('/dashboard', function () {
+            return Inertia::render('Dashboard/Index');
+        })->name('dashboard.index');
     }
 });
 

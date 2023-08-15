@@ -1,18 +1,23 @@
 <script setup>
-import {useForm} from '@inertiajs/vue3'
+import {router, useForm} from '@inertiajs/vue3'
 
 const form = useForm({
     email: null,
     password: null,
 })
+
+function submit() {
+    router.post('login', form)
+}
+
 </script>
 
 <template>
     <section class="bg-gradient-to-l from-[#C9D6FF] to-[#E2E2E2]">
         <section class="container mx-auto h-screen w-screen">
-            <form @submit.prevent="form.post('login')">
+            <form @submit.prevent="submit">
 
-                {{form.errors.email}}
+                {{ form.errors.email }}
                 <section class="bg-white w-min p-8">
                     <section class="flex flex-col gap-y-4">
                         <label class="block" for="email">Email
