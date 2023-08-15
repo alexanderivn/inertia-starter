@@ -23,7 +23,7 @@ class FortifyServiceProvider extends ServiceProvider {
         //
         $this->app->instance(LogoutResponse::class, new class implements LogoutResponse {
             public function toResponse($request) {
-                return redirect(route('/'));
+                return redirect(route('/'))->with('logoutSuccess', 'Logged out successfully');
             }
         });
     }
