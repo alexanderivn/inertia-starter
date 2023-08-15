@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Dashboard\DashboardController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -18,22 +20,26 @@ Route::get('/', function () {
     return Inertia::render('Front/Index');
 })->name('/');
 
-Route::middleware(['auth'])->group(function () {
-    {
-        Route::get('/dashboard', function () {
-            return Inertia::render('Dashboard/Index');
-        })->name('dashboard.index');
-    }
-});
+
+// Authentication
 
 
 // Middleware guess
 Route::middleware(['guest'])->group(function () {
-    Route::get('/login', function () {
-        return Inertia::render('Auth/Login');
-    })->name('login');
+    Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+    Route::post('/login', [LoginController::class, 'store'])->name('login');
 });
-// Middleware Admin
+
+// Middleware Authenticated
+Route::middleware(['auth'])->group(function () {
+    {
+        // Dashboard
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+
+        // Logout
+        Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
+    }
+});
 
 
 // some route here
