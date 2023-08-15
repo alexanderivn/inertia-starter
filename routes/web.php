@@ -18,9 +18,14 @@ Route::get('/', function () {
     return Inertia::render('Front/Index');
 })->name('/');
 
-Route::get('/about', function () {
-    return Inertia::render('Front/About');
-})->name('about');
+Route::middleware(['auth'])->group(function () {
+    {
+        Route::get('/about', function () {
+            return Inertia::render('Front/About');
+        })->name('about');
+    }
+});
+
 
 // Middleware guess
 Route::get('/login', function () {
