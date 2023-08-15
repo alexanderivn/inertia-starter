@@ -28,10 +28,12 @@ Route::middleware(['auth'])->group(function () {
 
 
 // Middleware guess
-Route::get('/login', function () {
-    return Inertia::render('Auth/Login');
-})->name('login');
-
-
+Route::middleware(['guest'])->group(function () {
+    Route::get('/login', function () {
+        return Inertia::render('Auth/Login');
+    })->name('login');
+});
 // Middleware Admin
+
+
 // some route here
