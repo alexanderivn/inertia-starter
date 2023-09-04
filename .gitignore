@@ -25,3 +25,7 @@ composer.lock
 .idea/php.xml
 .idea/laravel-idea.xml
 .idea/inertia-starter.iml
+composer.lock
+.idea/php.xml
+.idea/laravel-idea.xml
+.idea/inertia-starter.iml
